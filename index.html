@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Registration</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>College Event Registration</h2>
+      <form action="insert.php" method="POST">
+    <label>Name:</label>
+    <input type="text" name="name" required><br>
+    <label>Enrollment No:</label>
+    <input type="text" name="enrollment" required><br>
+    <label>Branch:</label>
+    <input type="text" name="branch" required><br>
+    <label>Year:</label>
+    <input type="text" name="year" required><br>
+    <label>Semester:</label>
+    <input type="text" name="semester" required><br>
+    <button type="submit">Register</button>
+</form>
+      <p id="message"></p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
