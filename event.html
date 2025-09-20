@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Registration</title>
+<style>
+    body {
+        background-color: #121212;
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+    h1 {
+        text-align: center;
+    }
+    .container {
+        max-width: 500px;
+        margin: auto;
+        background: #1e1e1e;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .event {
+        margin: 10px 0;
+    }
+    input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: none;
+    }
+    button {
+        background-color: #6200ea;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    button:hover {
+        background-color: #3700b3;
+    }
+    a {
+        color: #bb86fc;
+        text-decoration: none;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+    <h1>Event Registration</h1>
+    <div class="container">
+        <form id="eventForm" action="save_event.php" method="POST">
+            <label for="enrollment">Enrollment Number:</label>
+            <input type="text" name="enrollment" id="enrollment" placeholder="Enter Enrollment No" required>
+
+            <div class="event">
+                <input type="checkbox" name="events[]" value="Coding Contest" id="event1">
+                <label for="event1">Coding Contest</label>
+            </div>
+            <div class="event">
+                <input type="checkbox" name="events[]" value="Robotics Challenge" id="event2">
+                <label for="event2">Robotics Challenge</label>
+            </div>
+            <div class="event">
+                <input type="checkbox" name="events[]" value="Quiz Competition" id="event3">
+                <label for="event3">Quiz Competition</label>
+            </div>
+            <div class="event">
+                <input type="checkbox" name="events[]" value="Gaming Tournament" id="event4">
+                <label for="event4">Gaming Tournament</label>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="show_events.php">View Registered Events</a>
+        </div>
+    </div>
+</body>
+</html>

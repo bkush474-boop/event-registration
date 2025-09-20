@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #121212; /* Dark background */
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .thank-you-container {
+            text-align: center;
+            background-color: #1e1e1e;
+            padding: 50px 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            max-width: 500px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+
+        .thank-you-container.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #4caf50;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #ccc;
+        }
+
+        a {
+            text-decoration: none;
+            padding: 12px 25px;
+            background-color: #4caf50;
+            color: #fff;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        a:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Background animated particles */
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(76, 175, 80, 0.3);
+            animation: float 6s infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0) scale(0.5); }
+            50% { transform: translateY(-50px) translateX(30px) scale(1); }
+            100% { transform: translateY(0) translateX(0) scale(0.5); }
+        }
+
+        @media(max-width: 600px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="thank-you-container" id="thankYou">
+        <h1>Thank You!</h1>
+        <p>Your submission has been received successfully. We appreciate your interest and will get back to you soon.</p>
+        <a href="index.html">Go Back to Home</a>
+    </div>
+
+    <script>
+        // Show animation
+        window.addEventListener('load', () => {
+            const container = document.getElementById('thankYou');
+            setTimeout(() => {
+                container.classList.add('show');
+            }, 300);
+        });
+
+        // Generate random floating particles
+        const particleCount = 15;
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            const size = Math.random() * 15 + 5 + 'px';
+            particle.style.width = size;
+            particle.style.height = size;
+            particle.style.top = Math.random() * window.innerHeight + 'px';
+            particle.style.left = Math.random() * window.innerWidth + 'px';
+            particle.style.animationDuration = (Math.random() * 5 + 3) + 's';
+            document.body.appendChild(particle);
+        }
+    </script>
+</body>
+</html>
